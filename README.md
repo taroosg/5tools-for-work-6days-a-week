@@ -6,7 +6,7 @@ marp: true
 theme: gaia
 class:
  - invert
-headingDivider: 2 
+headingDivider: 2
 paginate: true
 -->
 
@@ -16,118 +16,113 @@ _class:
  - invert
 -->
 
-# Deploy Marp to GitHub Pages
+# 週 6 稼働 4 ヶ月を支えた神ツール 5 選
 
-Presentations to Webpages: Instantly!
+週 6 はよくない
 
-## What?
+## 自己紹介（Twitter: @taroosg）
 
-[Marp](https://marp.app/) lets you create HTML slides from markdown (like this!).
-
-This presentation is both a [website](https://alexsci.com/marp-to-pages) and a [README.md](https://github.com/ralexander-phi/marp-to-pages/blob/main/README.md).
-
-## Why?
-
-Treat your presentation the same way you treat code.
-
-- Use git to track changes
-- Pull requests to collaborate
-- Deploy automatically
-- See a problem? Open an issue!
-
-## Setup
-
-Want to create your own?
-
-First, create a new repo [from the template repo](https://github.com/ralexander-phi/marp-to-pages).
-
-![](img/use-template.png)
-
-## Configure GitHub Pages
-
-Open your new repo and [setup publishing](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
-
-You'll typically use `gh-pages` as the deploy branch.
-
-## Review Build
-
-Click on Actions tab and see if the build succeeded (it may take some time).
-
-![](img/click-actions.png)
-
-You should now see the generated files in the `gh-pages` branch.
-
-## View webpage
-
-Open your deployed webpage to see the content.
-
-Out of the box you should see `README.md` as `/index.html` and `/README.pdf`. Slides under `docs/` are also converted.
-
-## Running locally
-
-Locally you'll run commands like:
-
-```
-$ marp README.md -o build/README.pdf
+```json
+{
+  "name": "Taro Ohsugi",
+  "works": [
+    {
+      "work": "🎓 G's ACADEMY FUKUOKA 主任講師",
+      "skills": ["JavaScript", "React", "PHP", "Laravel"]
+    },
+    {
+      "work": "🎓 エンジニア",
+      "skills": ["Laravel", "JavaScript", "画面設計", "DB設計"]
+    }
+  ],
+  "like": ["💻", "📚", "🛩️ 🚌 🚅 🚃", "🥃 🍷 🍺", "🚮"]
+}
 ```
 
-or
+## 概要
 
-```
-$ npx @marp-team/marp-cli@latest README.md -o build/README.pdf
-```
+本記事では下記を述べる．
 
-## As a workflow step
+- これまで経験したことのない週 6 稼働 4 ヶ月について，成果を出し続けるために必要なこと．
+- 上記を達成するために，用いた方法・ツールの紹介．
+- 週 6 稼働はやめておけ．
 
-The workflow runs an equivalent step:
+## 背景（スケジュール）
 
-```
-- name: Marp Build (README.pdf)
-  uses: docker://marpteam/marp-cli:v1.7.0
-  with:
-    args: README.md -o build/README.pdf
-  env:
-    MARP_USER: root:root
-```
+4 月から昨日まで週 6 稼働が継続した．
 
-Note the `args` match the previous slide.
+- 月：オフ
+- 火：講義 + 課題チェック + 講義準備
+- 水：講義 + 講義準備
+- 木：開発
+- 金：講義 + 講義準備
+- 土：講義 + 講義準備
+- 日：開発
 
-## Customizing the build
+## 必要なこと
 
-Anything in the `build/` folder will be deployed to GitHub Pages.
+成果を出し続けるためにはなにが必要なのか．
 
-You can copy extra files or run further processing steps using other tools.
+- 継続して一定したパフォーマンスを出すこと．
+- 仕事に抜け漏れがないこと．
+- 前倒しできるものは前倒し，負債を産まないこと．
 
-## Learn more about Marp
+## 継続して一定したパフォーマンスを出すこと
 
-This is a good time to learn more about Marp. Here's some resources:
+最も重要なことは睡眠である．
 
-- [CommonMark](https://commonmark.org/)
-- [Cheat Sheet](https://commonmark.org/help/)
-- [Themes](https://github.com/marp-team/marp-core/tree/master/themes)
-- [CSS Themes](https://marpit.marp.app/theme-css)
-- [Directives](https://marpit.marp.app/directives)
-- [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
+Oura Ring のスコアを高く保つことが大事
 
-## Example Sites
+睡眠のリズムが安定すると体力気力の浮き沈みがなくなり，メンタルや集中力も安定する．Oura Ring は神．
 
-Known sites using this action are:
+## 例
 
-- [University of Illinois at Urbana-Champaign's CS 199 Even More Practice](https://cs199emp.netlify.app/) [(code)](https://github.com/harsh183/emp-125)
-- [Exploring agent based models](https://roiarthurb.github.io/Talk-UMMISCO_06-07-2020/) [(code)](https://github.com/RoiArthurB/Talk-UMMISCO_06-07-2020)
+## 仕事に抜け漏れがないこと
 
-Send a [pull request](https://github.com/ralexander-phi/marp-to-pages) to get your site added.
+この期間で最も気を使ったのが「必要な業務を完了できているかどうか」．
 
-## Publish your slides
+- ある作業を何日の何時にやるのか．
+- その作業は完了しているかどうか．
 
-When you are ready to share your presentation, commit or merge to `main` and your content on GitHub Pages will automatically update.
+## 仕事に抜け漏れがないこと
 
-# 🎉
+Google Calendar と Todoist を連携させた．
+
+- カレンダーに記入した内容が自動的に todo リストに追加される．
+- todo リストに記入した内容が自動的にカレンダーにも表示される．
+
+カレンダーと todo リストを一つのデータで扱うことができる．
+
+## デモ
+
+「Google Calendar に予定を入れる → Todoist で完了を管理する」．
+
+## 前倒しできるものは前倒し，負債を産まないこと
+
+AI を使え．
+
+Chat GPT と GitHub Copilot を使用することで講義準備と開発の時間を短縮した．
+
+コメント書いて Enter 押して Tab キー，コメント書いて Enter 押して Tab キー，コメント書いて Enter 押して Tab キー，．．．
+
+## まとめ
+
+- 継続して一定したパフォーマンスを出すために，Oura Ring を用いて睡眠を安定させた．
+- 仕事に抜け漏れがないために，Google Calendar と Todoist を連携さえてデータを統合した．
+- 前倒しできるものは前倒して負債を産まないために，AI ツールを活用して作業スピードを上げた．
+
+## とはいえ
+
+ツールや工夫次第で結果を出すことはできても，更に長期的な目で見た場合には自転車操業に見える．
+
+「週 6 稼働はオススメしない」とう結論で締めたい．
+
+# 🍺
+
 <!--
 _class:
  - lead
  - invert
 -->
-### Hooray!
 
-
+### Have a nice summer vacation!
